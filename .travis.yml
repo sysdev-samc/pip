@@ -10,5 +10,5 @@ install:
   - pip install molecule
   - pip install docker
 script:
-  - sudo mkdir -p /var/cache/pip/pypi
+  - sudo mkdir -p /var/cache/pip/{pypi,sni}
   - molecule test
