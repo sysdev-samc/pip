@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: sysdev-amc
-  description: module pip
+  description: install/config pip with offline support Debian/Ubuntu/Centos
   license: MIT
   min_ansible_version: 2.4
   platforms:
