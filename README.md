@@ -16,15 +16,11 @@ SSL SNI support to Python version prior to 2.7.9
 
 ## Role Variables
 
-pip_config_timeout:
-type : string
-description : `timeout` see manpage pip.conf
+pip_config_timeout: `timeout` see manpage pip.conf
 
         pip_config_timeout: 60
 
-pip_config_index_url:
-type : string
-description : `index_url` Base URL of Python Package Index
+pip_config_index_url: `index_url` Base URL of Python Package Index
         pip_config_index_url: https://pypi.python.org/simple/
 
 ## Example Playbook
@@ -41,7 +37,7 @@ Use `molecule` (https://molecule.readthedocs.io/en/latest) to test role
 
 ## License
 
-MIT/Simplified BSD license
+MIT
 
 ## Author Information
 
