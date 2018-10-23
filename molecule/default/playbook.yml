@@ -1,0 +1,10 @@
+---
+- name: Pip
+  hosts: all
+  gather_facts: true
+  become: true
+  vars:
+    ca_urls:
+      - url: https://artifactory.dsa.net/list/software/dsa.ca.crt
+  roles:
+    - role: pip

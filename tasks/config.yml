@@ -1,0 +1,19 @@
+---
+- name: template pip.conf
+  template:
+    src: pip.conf.j2
+    dest: /etc/pip.conf
+  become: true
+
+- name: Check directory /etc/bash_completion.d exist
+  stat: path=/etc/bash_completion.d
+  register: p
+
+- name: copy bash completion
+  copy:
+    src: pip-completion.bash
+    dest: /etc/bash_completion.d/pip
+    mode: 0644
+  when: p.stat.exists
+  diff: false
+  become: true

@@ -1,0 +1,16 @@
+---
+
+python_pip_packages:
+  - epel-release
+  - python-pip
+
+python_sni_support_packages:
+  - python-devel
+  - openssl-devel
+  - libffi-devel
+  - gcc
+  - gcc-c++
+  - make
+  - autoconf
+  - automake
+  - binutils

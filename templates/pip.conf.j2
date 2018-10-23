@@ -1,0 +1,7 @@
+# {{ ansible_managed }}
+[global]
+timeout = {{ pip_config_timeout }}
+cert = /etc/ssl/certs/ca-certificates.crt
+{% if pip_config_index_url is defined and pip_config_index_url %}
+index-url = {{ pip_config_index_url }}
+{% endif %}

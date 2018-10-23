@@ -1,0 +1,48 @@
+---
+- name: SNI =  create directory
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0775
+  with_items:
+    - "{{ pip_offline_dir }}/sni"
+  become: true
+
+- name: SNI = Install support packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ python_sni_support_packages }}"
+  become: true
+
+# There extra pip dependencies are needed to add SSL SNI support to
+# Python version prior to 2.7.9. SNI support is needed by the Ansible
+# apt_key module.
+
+- name: SNI = Archive pypi folder
+  archive:
+    path: "{{ role_path }}/files/sni"
+    dest: "{{ pip_offline_dir }}/sni.tar.gz"
+  delegate_to: localhost
+  connection: local
+  run_once: true
+  become: true
+
+- name: SNI = Copy pip packages
+  unarchive:
+    src: "{{ pip_offline_dir }}/sni.tar.gz"
+    dest: "{{ pip_offline_dir }}"
+  become: true
+
+- name: SNI = Install pip packages
+  pip:
+    name: "{{ item.name }}"
+    version: "{{ item.version }}"
+    state: present
+    extra_args: "-U --no-index --find-links {{ pip_offline_dir }}/sni"
+  with_items: "{{ pip_sni_pip_dependencies }}"
+  retries: 3
+  delay: 10
+  register: result
+  until: result is success
+  become: true

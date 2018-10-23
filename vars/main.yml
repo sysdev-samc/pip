@@ -1,0 +1,49 @@
+---
+python_pip_packages:
+  - python-pip
+
+pip_packages:
+  - name: pip
+    filename: pip-9.0.1.tar.gz
+    version: 9.0.1
+  - name: virtualenv
+    filename: virtualenv-15.1.0-py2.py3-none-any.whl
+    version: 15.1.0
+
+
+pip_sni_pip_dependencies:
+  - name: wheel
+    filename: wheel-0.29.0-py2.py3-none-any.whl
+    version: 0.29.0
+  - name: setuptools
+    filename: setuptools-38.3.0-py2.py3-none-any.whl
+    version: 38.3.0
+  - name: six
+    filename: six-1.10.0-py2.py3-none-any.whl
+    version: 1.10.0
+  - name: asn1crypto
+    filename: asn1crypto-0.22.0-py2.py3-none-any.whl
+    version: 0.22.0
+  - name: idna
+    filename: idna-2.5-py2.py3-none-any.whl
+    version: 2.5
+  - name: enum34
+    filename: enum34-1.1.6-py2-none-any.whl
+    version: 1.1.6
+  - name: pycparser
+    filename: pycparser-2.17.tar.gz
+    version: 2.17
+    state: present
+  - name: cffi
+    filename: cffi-1.10.0.tar.gz
+    version: 1.10.0
+  - name: cryptography
+    filename: cryptography-2.1.1.tar.gz
+    version: 2.1.1
+  - name: pyOpenSSL
+    filename: pyOpenSSL-17.3.0-py2.py3-none-any.whl
+    version: 17.3.0
+  - name: ipaddress
+    filename: ipaddress-1.0.18-py2-none-any.whl
+    version: 1.0.18
+    state: present

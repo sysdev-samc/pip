@@ -1,0 +1,7 @@
+---
+
+python_sni_support_packages:
+  - build-essential
+  - python-dev
+  - libssl-dev
+  - libffi-dev

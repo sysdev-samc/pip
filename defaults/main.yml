@@ -1,0 +1,5 @@
+---
+pip_config_timeout: 60
+pip_config_index_url:
+pip_config_find_links_urls: []
+pip_offline_dir: /var/cache/pip
