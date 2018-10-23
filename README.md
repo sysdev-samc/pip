@@ -21,6 +21,7 @@ pip_config_timeout: `timeout` see manpage pip.conf
         pip_config_timeout: 60
 
 pip_config_index_url: `index_url` Base URL of Python Package Index
+
         pip_config_index_url: https://pypi.python.org/simple/
 
 ## Example Playbook
