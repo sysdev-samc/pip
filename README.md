@@ -1,5 +1,7 @@
 # pip
 
+[![Build Status](https://travis-ci.org/sysdev-samc/pip.svg?branch=master)](https://travis-ci.org/sysdev-samc/pip)
+
 This role can be used to install pip module python for mode connected or not connected.
 In this role, you have:
 
