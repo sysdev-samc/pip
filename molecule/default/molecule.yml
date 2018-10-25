@@ -9,18 +9,8 @@ lint:
 platforms:
   - name: pip_debian9
     image: amd64/debian:stretch
-  - name: pip_debian8
-    image: amd64/debian:jessie
-  - name: pip_debian7
-    image: amd64/debian:wheezy
   - name: pip_ubuntu18_04
     image: amd64/ubuntu:bionic
-  - name: pip_ubuntu16_04
-    image: amd64/ubuntu:xenial
-  - name: pip_ubuntu14_04
-    image: amd64/ubuntu:trusty
-  - name: pip_centos7
-    image: centos:7
 provisioner:
   name: ansible
   options:
