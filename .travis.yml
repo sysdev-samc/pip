@@ -3,12 +3,20 @@ sudo: required
 language: python
 services:
   - docker
+env:
+  matrix:
+    - MOLECULE_DISTRO_FAMILY=debian MOLECULE_DISTRO_NAME=stretch
+    - MOLECULE_DISTRO_FAMILY=debian MOLECULE_DISTRO_NAME=jessie
+    - MOLECULE_DISTRO_FAMILY=debian MOLECULE_DISTRO_NAME=wheezy
+    - MOLECULE_DISTRO_FAMILY=ubuntu MOLECULE_DISTRO_NAME=bionic
+    - MOLECULE_DISTRO_FAMILY=ubuntu MOLECULE_DISTRO_NAME=xenial
+    - MOLECULE_DISTRO_FAMILY=ubuntu MOLECULE_DISTRO_NAME=trusty
+    - MOLECULE_DISTRO_FAMILY=centos MOLECULE_DISTRO_NAME=7
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-ce
 install:
-  - pip install molecule
-  - pip install docker
+  - pip install molecule docker
 script:
   - sudo mkdir -p /var/cache/pip/{pypi,sni}
   - molecule test
