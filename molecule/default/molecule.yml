@@ -7,10 +7,9 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: pip_debian9
-    image: amd64/debian:stretch
-  - name: pip_ubuntu18_04
-    image: amd64/ubuntu:bionic
+  - name: pip_${MOLECULE_DISTRO_FAMILY:-debian}_${MOLECULE_DISTRO_NAME:-stretch}
+    image: "${MOLECULE_DISTRO_ARCH:-amd64}/${MOLECULE_DISTRO_FAMILY:-debian}:${MOLECULE_DISTRO_NAME:-stretch}"
+    privileged: true
 provisioner:
   name: ansible
   options:
