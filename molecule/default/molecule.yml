@@ -9,6 +9,8 @@ lint:
 platforms:
   - name: pip_debian9
     image: amd64/debian:stretch
+  - name: pip_ubuntu18_04
+    image: amd64/ubuntu:bionic
 provisioner:
   name: ansible
   options:
